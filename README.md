@@ -2,6 +2,9 @@
 
 Polymer web component configurable to login in firebase
 
+## <span style="color:red">VERY IMPORTANT!</span>
+Before you go on following the instructions you should have a firebase project to use this component in it. Otherwise, it will be not possible to use it because all the configuration settings are based on firebase projects. :sweat_smile:
+
 ## Demo
 [login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)
 
@@ -13,7 +16,7 @@ Polymer web component configurable to login in firebase
 ## Use
 
     npm install bower -g
-    mkdir myproyect && cd myproyect
+    cd myproyect
     bower install --save https://github.com/ElenaCerezoSwing/LoginKairos.git
     
     

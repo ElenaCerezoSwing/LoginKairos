@@ -12,25 +12,27 @@ Polymer web component configurable to login in firebase
           </ogin-kairos>
 ## Use
 
-> npm install bower -g
-> mkdir myproyect && cd myproyect
-> bower install --save https://github.com/ElenaCerezoSwing/LoginKairos.git
-Edit your HTML file and put the link to webcomponent into HEAD tags
+    npm install bower -g
+    mkdir myproyect && cd myproyect
+    bower install --save https://github.com/ElenaCerezoSwing/LoginKairos.git
+    
+    
+#### Edit your HTML file and put the link to webcomponent into HEAD tags
 
-><head>
->   ...
->   <link rel="import" href="./bower_components/login-kairos/login-kairos.html">
->   ...
-></head>
+     <head>
+       ...
+      <link rel="import" href="./bower_components/login-kairos/login-kairos.html">
+       ...
+     </head>
 
 
-Put the component into the BODY and fill the configure attributes with firebase configuration:
+#### Put the component into the BODY and fill the configure attributes with firebase configuration:
 
-><body>
->  ...
->  <login-kairos [atributos]></login-kairos>
->  ...
-></body>
+    <body>
+      ...
+      <login-kairos [atributos]></login-kairos>
+      ...
+    </body>
 
 ### Authors
 [Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing) - Front-end developers - 

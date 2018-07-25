@@ -62,6 +62,7 @@
         width: 100%;
         background-color: rgba(87, 87, 87, .65);
         position: absolute;
+        top: 0;
         z-index: 1000000000;
         display: flex;
         align-items: center;
@@ -113,7 +114,7 @@
             <p class="modal-container-text">
               Solo puedes iniciar sesión con el correo de KairosDS
             </p>
-            <button type="button" id="btn-modal" on-click="closeModal">
+            <button type="button" id="btn-modal" on-click="[[showModalOnEmailOfKairosError(user)]]">
               Aceptar
             </button>
           </div>
@@ -235,11 +236,6 @@
           return false;
         }
         return !!(user && user.email && !user.email.endsWith(this.hd));
-      }
-
-      closeModal(e) {
-        let modalContainer = Polymer.dom(this.root).querySelector('.page-modal-errorLogin')
-        modalContainer.classList.add('hidden');
       }
 
       showWebApplication() {

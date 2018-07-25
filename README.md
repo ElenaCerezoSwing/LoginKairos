@@ -53,7 +53,7 @@ In case you do not have bower installed, please use the following instructions:
 
 
 ### Authors
-[Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing) , Front-end developers  
+[Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing), Front-end developers  
 
 ### License
 This project is licensed under the [MIT License](https://github.com/ElenaCerezoSwing/LoginKairos/blob/master/LICENSE)

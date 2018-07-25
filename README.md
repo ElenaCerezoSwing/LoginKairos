@@ -34,11 +34,14 @@ Polymer web component configurable to login in firebase
       ...
     </body>
     
-#### To make sure our component is supported in other browsers apart from chrome, write down these tags in your HTML
+#### POLYFILLS: To make sure our component is supported in other browsers apart from chrome, write down these tags in your HTML
+
     <head>
+     ...    
      <script src="../bower_components/webcomponentsjs/webcomponents-loader.js">
      </script>
      <link rel="import" href="../login-kairos.html">
+     ...
     </head>
     
 ### Authors

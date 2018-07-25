@@ -3,7 +3,7 @@
 Polymer web component configurable to login in firebase
 
 ## Demo
-[login-kairos demo ](https://jsfiddle.net/eparrado/d3wsfbxp/)
+[login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)
 
           <login-kairos 
             domain="YOUR_FIREBASE_DOMAIN_HERE_WITHOUT HTTPS_PROPTOCOL"

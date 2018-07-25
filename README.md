@@ -12,7 +12,6 @@ Before you go on following the instructions you should have a firebase project t
  domain= **"YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
  apikey= **"YOUR_APIKEY_HERE"**  
  provider="google">  
- 
  </login-kairos>
 
    
@@ -31,7 +30,6 @@ In case you do not have bower installed, please use the following instructions:
     cd myproyect
     cd /public "or in the folder where you have your index.html"
     bower install --save https://github.com/ElenaCerezoSwing/LoginKairos.git
-    bower install --save polymerfire
     
     
 #### Edit your HTML file and put the link to webcomponent into HEAD tags. It is necessary to use the POLYFILL script before the import

@@ -1,0 +1,259 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymerfire/firebase-auth.html">
+<link rel="import" href="../polymerfire/firebase-app.html">
+<link rel="import" href="../polymerfire/firebase.html">
+
+
+<dom-module id="login-kairos">
+  <template>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+        position: relative;
+      }
+
+      :host {
+        all: initial;
+        --app-color-primary: #FF7900;
+        --app-color-light: white;
+        --app-color-midtone: #d5d5d5;
+        --app-color-midtone-dark: #575757;
+        --app-color-dark: black;
+
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      #btn-login,
+      #btn-logout,
+      #btn-modal {
+        text-transform: uppercase;
+        background-color: var(--app-color-midtone);
+        margin: 8px 0px 26px 0px;
+        padding: 19px 0;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        font: inherit;
+        color: var(--app-color-light);
+        letter-spacing: 6px;
+        font-size: 18px;
+        transition: background-color ease-in-out .5s;
+      }
+
+      #btn-login:hover,
+      #btn-logout:hover {
+        background-color: var(--app-color-primary);
+      }
+
+      #btn-modal {
+        margin: 0;
+        background-color: var(--app-color-primary);
+      }
+
+      .page-modal-errorLogin {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(87, 87, 87, .65);
+        position: absolute;
+        z-index: 1000000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-container {
+        padding: 16px 16px 35px 16px;
+        background-color: var(--app-color-light);
+        margin: 0 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .modal-container-text {
+        margin: 0;
+        color: var(--app-color-midtone-dark);
+        margin-bottom: 30px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: .6px;
+      }
+
+
+      .modal-container-title {
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--app-color-midtone-dark);
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: .6px;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+
+    <firebase-app auth-domain="[[domain]]" database-url="https://[[domain]]/" api-key="[[apikey]]">
+    </firebase-app>
+    <firebase-auth id="auth" provider="[[provider]]"></firebase-auth>
+
+    <div class="page-login">
+      <template is="dom-if" if="[[showModalOnEmailOfKairosError(user)]]">
+        <div class="page-modal-errorLogin">
+          <div hd="{{hd}}" class="modal-container">
+            <p class="modal-container-title">Kelvin dice:</p>
+            <p class="modal-container-text">
+              Solo puedes iniciar sesión con el correo de KairosDS
+            </p>
+            <button type="button" id="btn-modal" on-click="closeModal">
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </template>
+
+      <button id="btn-login">[[buttonName]]</button>
+    </div>
+
+  </template>
+
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    class LoginKairos extends Polymer.Element {
+      static get is() { return 'login-kairos'; }
+      static get properties() {
+        return {
+          buttonName: {
+            type: String,
+            value: 'login',
+          },
+          provider: {
+            type: String,
+            value: "google"
+          },
+          domain: {
+            type: String
+          },
+          apikey: {
+            type: String
+          },
+          hd: {
+            type: String,
+            value: '@kairosds.com'
+          },
+          user: {
+            type: Object,
+            value: () => ({})
+          }
+        };
+      }
+
+
+      connectedCallback() {
+        super.connectedCallback();
+        this.initGoogleAuthProviderWithScope();
+        this.subscribeAuthStateChanged();
+        this.addEventListener('click', this._onClick);
+      }
+
+      disconnectedCallback() {
+        this.removeEventLister('click', this._onClick);
+      }
+
+      initGoogleAuthProviderWithScope() {
+        this.provider = new firebase.auth.GoogleAuthProvider();
+        this.provider.addScope('email');
+        this.provider.setCustomParameters({
+          hd: "kairosds.com"
+        });
+      }
+
+      subscribeAuthStateChanged() {
+        firebase.auth().onAuthStateChanged(function (user) {
+          this.set('user', user);
+        }.bind(this))
+      }
+
+      _onClick(e) {
+        if (this.user === null) {
+          this.signInWithPopup();
+          this.changeButtonNameToLogout()
+        } else {
+          this.signOut();
+          this.changeButtonNameToLogin();
+        }
+      }
+
+      signOut() {
+        firebase.auth().signOut().then(function () {
+          this.userIsNotLoggedAnymore();
+        }.bind(this)).catch(function (error) {
+          console.error('Sign Out Error', error);
+        });
+      }
+
+      changeButtonNameToLogin() {
+        this.buttonName = 'login';
+      }
+
+      changeButtonNameToLogout() {
+        this.buttonName = 'logout';
+      }
+
+      signInWithPopup() {
+        firebase.auth().signInWithPopup(this.provider).then(function (result) {
+          this.notifyIfUserEmailIsNotValid();
+        }.bind(this)).catch(function (error) {
+          console.log("Error al intentar registarte", "errorCode: ", error.code, "errorMessage:", error.message, "credential:", error.credential)
+        });
+      }
+
+      notifyIfUserEmailIsNotValid() {
+        if (!this.isEmailUserOfKairos(this.user)) {
+          this.changeButtonNameToLogin();
+          console.log('Debes iniciar seción con el mail de kairos');
+        }
+        else {
+          this.showWebApplication();
+        }
+      }
+
+      isEmailUserOfKairos() {
+        return firebase.auth().currentUser.email.endsWith(this.hd);
+      }
+
+      showModalOnEmailOfKairosError(user) {
+        if (!user) {
+          return false;
+        }
+        return !!(user && user.email && !user.email.endsWith(this.hd));
+      }
+
+      closeModal(e) {
+        let modalContainer = Polymer.dom(this.root).querySelector('.page-modal-errorLogin')
+        modalContainer.classList.add('hidden');
+      }
+
+      showWebApplication() {
+        document.dispatchEvent(new CustomEvent('logged-user'));
+        console.log('fire event on login');
+        //importante, lanzarlo sobre el documento
+      }
+
+      userIsNotLoggedAnymore() {
+        document.dispatchEvent(new CustomEvent('logged-out-user'));
+        console.log('fire event on logout');
+      }
+    }
+
+    window.customElements.define(LoginKairos.is, LoginKairos);
+  </script>
+</dom-module>

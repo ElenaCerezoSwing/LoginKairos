@@ -15,6 +15,7 @@ Here, you could appreciate the appearance
 ![loginkairoscode](https://user-images.githubusercontent.com/33314032/43213602-4ea59f74-9037-11e8-8fc9-860bdc3b8751.png)      
 
 And if you just one to copy and paste, here is the code:  
+  
 <login-kairos   
 domain= **"PUT_YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
 apikey= **"PUT_YOUR_APIKEY_HERE"**  

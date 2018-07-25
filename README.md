@@ -19,11 +19,11 @@ Polymer web component configurable to login in firebase
     
 #### Edit your HTML file and put the link to webcomponent into HEAD tags
 
-     <head>
-       ...
-      <link rel="import" href="YOUR_PATH_/bower_components/login-kairos/login-kairos.html">
-       ...
-     </head>
+    <head>
+     ...
+     <link rel="import" href="YOUR_PATH_/bower_components/login-kairos/login-kairos.html">
+     ...
+    </head>
 
 
 #### Put the component into the BODY and fill the configure attributes with firebase configuration:

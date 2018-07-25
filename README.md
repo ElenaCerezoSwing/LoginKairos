@@ -34,7 +34,7 @@ Polymer web component configurable to login in firebase
       ...
     </body>
     
-#### To make sure our component is supported in other browsers apart from chrome
+#### To make sure our component is supported in other browsers apart from chrome, write down these tags in your HTML
     <head>
      <script src="../bower_components/webcomponentsjs/webcomponents-loader.js">
      </script>
@@ -42,7 +42,7 @@ Polymer web component configurable to login in firebase
     </head>
     
 ### Authors
-[Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing) - Front-end developers - 
+[Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing) - Front-end developers  
 
 ### License
 This project is licensed under the MIT License 

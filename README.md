@@ -6,8 +6,8 @@ Polymer web component configurable to login in firebase
 Before you go on following the instructions you should have a firebase project to use this component in it. Otherwise, it will be not possible to use it because all the configuration settings are based on firebase projects. :sweat_smile:
 
 ## Demo
-[login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)
-<login-kairos   
+[login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)  
+\<login-kairos   
 domain= **"YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
 apikey= **"YOUR_APIKEY_HERE"**  
 provider="google">  

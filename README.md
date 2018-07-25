@@ -2,7 +2,7 @@
 
 Polymer web component configurable to login in firebase
 
-## <span style="color:red">VERY IMPORTANT!</span>
+## <font color=red>VERY IMPORTANT!</font>
 Before you go on following the instructions you should have a firebase project to use this component in it. Otherwise, it will be not possible to use it because all the configuration settings are based on firebase projects. :sweat_smile:
 
 ## Demo

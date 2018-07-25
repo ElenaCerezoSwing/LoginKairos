@@ -10,7 +10,7 @@ Before you go on following the instructions you should have a firebase project t
 <login-kairos   
 domain= **"YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
 apikey= **"YOUR_APIKEY_HERE"**  
-provider="google">
+provider="google">  
 \</login-kairos>  
 
 

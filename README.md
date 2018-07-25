@@ -10,7 +10,7 @@ You could find our component demo at the link below
 
 [login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)  
 
-Here, yo could appreciate the appearance  
+Here, you could appreciate the appearance  
 
 ![loginkairoscode](https://user-images.githubusercontent.com/33314032/43213602-4ea59f74-9037-11e8-8fc9-860bdc3b8751.png)      
 

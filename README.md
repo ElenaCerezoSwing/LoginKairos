@@ -8,7 +8,7 @@ Polymer web component configurable to login in firebase
           <login-kairos 
             domain="YOUR_FIREBASE_DOMAIN_HERE_WITHOUT HTTPS_PROPTOCOL"
             apikey="YOUR_APIKEY_HERE" 
-            provider="google>
+            provider="google">
           </ogin-kairos>
 ## Use
 
@@ -21,7 +21,7 @@ Polymer web component configurable to login in firebase
 
      <head>
        ...
-      <link rel="import" href="./bower_components/login-kairos/login-kairos.html">
+      <link rel="import" href="YOUR_PATH_/bower_components/login-kairos/login-kairos.html">
        ...
      </head>
 
@@ -33,7 +33,14 @@ Polymer web component configurable to login in firebase
       <login-kairos [atributos]></login-kairos>
       ...
     </body>
-
+    
+#### To make sure our component is supported in other browsers apart from chrome
+    <head>
+     <script src="../bower_components/webcomponentsjs/webcomponents-loader.js">
+     </script>
+     <link rel="import" href="../login-kairos.html">
+    </head>
+    
 ### Authors
 [Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing) - Front-end developers - 
 

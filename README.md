@@ -45,7 +45,7 @@ In case you do not have bower installed, please use the following instructions:
 
     <body>
       ...
-      <login-kairos [atributos]></login-kairos>
+      <login-kairos [attributes]></login-kairos>
       ...
     </body>
     
@@ -56,7 +56,7 @@ In case you do not have bower installed, please use the following instructions:
 [Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing) - Front-end developers  
 
 ### License
-This project is licensed under the MIT [License] (https://github.com/ElenaCerezoSwing/LoginKairos/blob/master/LICENSE)
+This project is licensed under the MIT [License](https://github.com/ElenaCerezoSwing/LoginKairos/blob/master/LICENSE)
 
 
  

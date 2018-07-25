@@ -8,10 +8,11 @@ Before you go on following the instructions you should have a firebase project t
 ## Demo
 [login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)
 
- <login-kairos   
- domain= **"YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
- apikey= **"YOUR_APIKEY_HERE"**  
- provider="google"></login-kairos>  
+ *<login-kairos   
+ *domain= **"YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
+ *apikey= **"YOUR_APIKEY_HERE"**  
+ *provider="google">
+ *</login-kairos>  
 
 
    

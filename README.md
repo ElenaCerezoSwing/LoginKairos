@@ -58,9 +58,6 @@ In case you do not have bower installed, please use the following instructions:
       ...
     </body>
     
-#### POLYFILLS: To make sure our component is supported in other browsers apart from chrome, write down these tags in your HTML
-
-
 ### Authors
 [Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing), Front-end developers  
 

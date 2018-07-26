@@ -102,12 +102,7 @@
       }
     </style>
 
-    <firebase-app
-      auth-domain="polymerfire-test.firebaseapp.com"
-      database-url="https://polymerfire-test.firebaseio.com/"
-      api-key="AIzaSyDTP-eiQezleFsV2WddFBAhF_WEzx_8v_g"
-      storage-bucket="polymerfire-test.appspot.com"
-      messaging-sender-id="544817973908">
+    <firebase-app auth-domain="[[domain]]" database-url="https://[[domain]]/" api-key="[[apikey]]">
     </firebase-app>
     <firebase-auth id="auth" user="{{user}}" provider="[[provider]]" on-error="handleError"></firebase-auth>
 
@@ -218,7 +213,6 @@
         firebase
           .auth()
           .signInWithPopup(this.provider)
-          // .signInWithEmailAndPassword('test@vivaldi.com', '12345678')
           .then((result) => {
             this.notifyIfUserEmailIsNotValid();
           })

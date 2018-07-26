@@ -1,7 +1,7 @@
-<link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../polymerfire/firebase-auth.html">
-<link rel="import" href="../polymerfire/firebase-app.html">
-<link rel="import" href="../polymerfire/firebase.html">
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../bower_components/polymerfire/firebase.html">
 
 
 <dom-module id="login-kairos">
@@ -102,9 +102,14 @@
       }
     </style>
 
-    <firebase-app auth-domain="[[domain]]" database-url="https://[[domain]]/" api-key="[[apikey]]">
+    <firebase-app
+      auth-domain="polymerfire-test.firebaseapp.com"
+      database-url="https://polymerfire-test.firebaseio.com/"
+      api-key="AIzaSyDTP-eiQezleFsV2WddFBAhF_WEzx_8v_g"
+      storage-bucket="polymerfire-test.appspot.com"
+      messaging-sender-id="544817973908">
     </firebase-app>
-    <firebase-auth id="auth" provider="[[provider]]"></firebase-auth>
+    <firebase-auth id="auth" user="{{user}}" provider="[[provider]]" on-error="handleError"></firebase-auth>
 
     <div class="page-login">
       <template is="dom-if" if="[[showModalOnEmailOfKairosError(user)]]">
@@ -210,11 +215,16 @@
       }
 
       signInWithPopup() {
-        firebase.auth().signInWithPopup(this.provider).then(function (result) {
-          this.notifyIfUserEmailIsNotValid();
-        }.bind(this)).catch(function (error) {
-          console.log("Error al intentar registarte", "errorCode: ", error.code, "errorMessage:", error.message, "credential:", error.credential)
-        });
+        firebase
+          .auth()
+          .signInWithPopup(this.provider)
+          // .signInWithEmailAndPassword('test@vivaldi.com', '12345678')
+          .then((result) => {
+            this.notifyIfUserEmailIsNotValid();
+          })
+          .catch((error) => {
+            console.log("Error al intentar registarte", "errorCode: ", error.code, "errorMessage:", error.message, "credential:", error.credential)
+          });
       }
 
       notifyIfUserEmailIsNotValid() {

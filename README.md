@@ -3,14 +3,14 @@
 Polymer web component configurable to login in firebase
 
 ## <font color=red>VERY IMPORTANT!</font>
-Before you go on following the instructions you should have a firebase project to use this component in it. Otherwise, it will be not possible to use it because all the configuration settings are based on firebase projects. :sweat_smile:
+Before you go on following the instructions please notice this component is configured to operate on a firebase project. Hence, you should have a firebase project to integrate this component. :sweat_smile:  
 
 ## Demo
-You could find our component demo at the link below  
+You could find our component demo at the link below    
 
-[login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)  
+[login-kairos demo ](https://jsfiddle.net/eparrado/r4q8oa2L/)    
 
-Here, you could appreciate the appearance  
+Here, you could appreciate the look and feel of the logo
 
 ![loginkairoscode](https://user-images.githubusercontent.com/33314032/43213602-4ea59f74-9037-11e8-8fc9-860bdc3b8751.png)      
 

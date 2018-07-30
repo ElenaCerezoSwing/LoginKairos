@@ -32,6 +32,9 @@ Make sure what is your bower version
  or 
  
     bower --v
+    
+Make sure your version is up to 1.8.3 or even higher. If not, please update it  
+
 
 In case you do not have bower installed, please use the following instructions:
 

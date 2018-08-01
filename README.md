@@ -40,7 +40,7 @@ In case you do not have bower installed, please use the following instruction:
 
     npm install bower -g
     
-After that step, please keep on following these instructions. And keep in your mind as a sacred word: == our component should be install in the same folder as your index.html is. ==
+After that step, please keep on following these instructions. And keep in your mind as a sacred word: ==our component should be install in the same folder as your index.html is.==
 
 
     cd myproyect

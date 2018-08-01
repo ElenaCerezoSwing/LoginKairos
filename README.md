@@ -36,15 +36,20 @@ Make sure what is your bower version
 Make sure your version is up to 1.8.3 or even higher. If not, please update it  
 
 
-In case you do not have bower installed, please use the following instructions:
+In case you do not have bower installed, please use the following instruction:
 
     npm install bower -g
+    
+After that step, please keep on following these instructions:  
+
     cd myproyect
     cd /public "or in the folder where you have your index.html"
     bower install --save https://github.com/ElenaCerezoSwing/LoginKairos.git
     
     
-#### Edit your HTML file and put the link to webcomponent into HEAD tags. It is necessary to use the POLYFILL script before the import
+#### Edit your HTML file and put the link to webcomponent into HEAD tags. It is necessary to use the POLYFILL script before the import  
+
+Just to make even clearer this step you could read [Estela's article](https://medium.com/@E_parrado/polymer-to-chrome-and-beyond-bf4b25dbbc66)
 
     <head>
      ...    
@@ -60,7 +65,10 @@ In case you do not have bower installed, please use the following instructions:
       ...
       <login-kairos [attributes]></login-kairos>
       ...
-    </body>
+    </body>  
+    
+
+You could also read at [Elena's article](https://medium.com/@elenacerezo83/mon%C3%B3meros-pol%C3%ADmeros-o-por-qu%C3%A9-est%C3%A1-tan-bien-elegido-el-nombre-de-polymer-c6826210f1b0) how to handle our component and its events.
     
 ### Authors
 [Estela Parrado](https://github.com/Eparrado) & [Elena Cerezo](https://github.com/ElenaCerezoSwing), Front-end developers  

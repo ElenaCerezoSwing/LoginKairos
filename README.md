@@ -19,7 +19,7 @@ And if you just one to copy and paste, here is the code:
 <login-kairos   
 domain= **"PUT_YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
 apikey= **"PUT_YOUR_APIKEY_HERE"**  
-hd= **"PUT_YOUR_HOST_DOMAIN_HERE"** 
+hd= **"PUT_YOUR_HOST_DOMAIN_HERE"**  
 provider="google">
 \</login-kairos>  
 

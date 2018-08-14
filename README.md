@@ -39,15 +39,28 @@ Make sure your version is up to 1.8.3 or even higher. If not, please update it
 In case you do not have bower installed, please use the following instruction:
 
     npm install bower -g
-    
-After that step, please keep on following these instructions. And keep in your mind as a sacred word: __*our component should be installed in the same folder as your index.html is.*__
+
+You need to create a bower.json to handle the dependencies:
+
+    bower init
+
+Answer to all questions and put Yes on this one:
+
+    set currently installed components as dependencies? Yes
+
+Then, you need to create a .bowerrc file to make sure that the component is installed in the public directory:
+
+    touch .bowerrc
+    echo '{
+        "directory": "public/bower_components"
+    }' > .bowerrc
+
+Finally, install the component and save the dependency
+
+    bower install --save https://github.com/ElenaCerezoSwing/LoginKairos.git    
 
 
-    cd myproyect
-    cd /public "or in the folder where you have your index.html"
-    bower install --save https://github.com/ElenaCerezoSwing/LoginKairos.git
-    
-    
+
 #### Edit your HTML file and put the link to webcomponent into HEAD tags. It is necessary to use the POLYFILL script before the import  
 
 Just to make even clearer this step you could read [Estela's article](https://medium.com/@E_parrado/polymer-to-chrome-and-beyond-bf4b25dbbc66)

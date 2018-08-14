@@ -23,7 +23,7 @@ hd= **"PUT_YOUR_HOST_DOMAIN_HERE"**
 provider="google">
 \</login-kairos>  
 
-*__hd example: "@gamil.com"*__ 
+*hd example: "@gamil.com"* 
 
 
    

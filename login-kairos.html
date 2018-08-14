@@ -106,7 +106,7 @@
     <div class="page-login">
       <template is="dom-if" if="[[showModalOnEmailOfKairosError(user)]]">
         <div class="page-modal-errorLogin">
-          <div hd="{{hd}}" class="modal-container">
+          <div hd="[[hd]]" class="modal-container">
             <p class="modal-container-title">Kelvin dice:</p>
             <p class="modal-container-text">
               Solo puedes iniciar sesión con el correo de KairosDS
@@ -145,7 +145,6 @@
           },
           hd: {
             type: String,
-            value: '@kairosds.com'
           },
           user: {
             type: Object,

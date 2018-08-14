@@ -12,15 +12,18 @@ You could find our component demo at the link below
 
 Here, you could appreciate the look and feel of the logo
 
-![loginkairoscode](https://user-images.githubusercontent.com/33314032/43213602-4ea59f74-9037-11e8-8fc9-860bdc3b8751.png)      
+![loginkairoscode](https://user-images.githubusercontent.com/33294007/44092006-81b79140-9fcf-11e8-9986-40e290a17fd5.png)      
 
 And if you just one to copy and paste, here is the code:  
   
 <login-kairos   
 domain= **"PUT_YOUR_FIREBASE_DOMAIN_HERE_WITHOUT_HTTPS_PROTOCOL"**   
 apikey= **"PUT_YOUR_APIKEY_HERE"**  
-provider="google">  
+hd= **"PUT_YOUR_HOST_DOMAIN_HERE"** 
+provider="google">
 \</login-kairos>  
+
+*__hd example: "@gamil.com"*__ 
 
 
    
